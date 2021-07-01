@@ -56,8 +56,8 @@ class ItensFormulario extends StatelessWidget{
     return Card(
       child:ListTile(
         leading:Icon(Icons.person),
-        title: Text( _formAluno.nome.toString()),
-        subtitle: Text(_formAluno.sala.toString(), style: TextStyle(fontSize: 15,color: Colors.black),
+        title: Text( _formAluno.name.toString()),
+        subtitle: Text(_formAluno.conta.toString(), style: TextStyle(fontSize: 15,color: Colors.black),
         )
       )
     );

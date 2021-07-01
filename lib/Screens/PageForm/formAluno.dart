@@ -10,7 +10,7 @@ class FormAluno extends StatefulWidget {
 class FormAlunoState extends State<FormAluno> {
   final _formKey = GlobalKey<FormState>();
   final TextEditingController _controladorNome = TextEditingController();
-  final TextEditingController _controladorSala = TextEditingController();
+  final TextEditingController _controladorConta = TextEditingController();
   bool checkBox1 =false;
   bool checkBox2 = false;
   String situacao = 'null';
@@ -46,74 +46,77 @@ class FormAlunoState extends State<FormAluno> {
             },
           ),
           TextFormField(
-            controller: _controladorSala,
+            controller: _controladorConta,
             keyboardType: TextInputType.number,
             decoration: InputDecoration(
               border: UnderlineInputBorder(),
               labelText: 'Digite o número da conta'
             ),
-            validator: (salaCadastrada){
-              if (salaCadastrada==null||salaCadastrada.isEmpty){
+            validator: (contaCadastrada){
+              if (contaCadastrada==null||contaCadastrada.isEmpty){
                 return "Digite um número de conta existente";
               }
 
-              listaCadastro.add(salaCadastrada);
+              listaCadastro.add(contaCadastrada);
 
             },
           ),
-            Row(
-              children: <Widget>[
-                   Text("\nRetido"),
-
-                   Checkbox(
-                     checkColor: Colors.white,
-                       value: checkBox1,
-                       onChanged: (value) {
-                       setState(() {
-                         checkBox1 = value!;
-                         if (checkBox1 == value){
-                           print("retido");
-                           checkBox2 = false;
-                           situacao = 'retido';
-                         }
-                      });
-                     },
-
-
-                    ),
-
-                    Text("\nAprovado"),
-                    Checkbox(
-                       checkColor: Colors.white,
-                       value: checkBox2,
-                       onChanged: (value) {
-                       setState(() {
-                         checkBox2 = value!;
-
-                         if (checkBox2 == value){
-                           print("aprovado");
-                           checkBox1 = false;
-                           situacao = 'aprovado';
-                         }
-
-
-                  });
-                },
-              ),
-
-            ],
-            ),
+            // Row(
+            //   children: <Widget>[
+            //        Text("\nRetido"),
+            //
+            //        Checkbox(
+            //          checkColor: Colors.white,
+            //            value: checkBox1,
+            //            onChanged: (value) {
+            //            setState(() {
+            //              checkBox1 = value!;
+            //              if (checkBox1 == value){
+            //                print("retido");
+            //                checkBox2 = false;
+            //                situacao = 'retido';
+            //              }
+            //           });
+            //          },
+            //
+            //
+            //         ),
+            //
+            //         Text("\nAprovado"),
+            //         Checkbox(
+            //            checkColor: Colors.white,
+            //            value: checkBox2,
+            //            onChanged: (value) {
+            //            setState(() {
+            //              checkBox2 = value!;
+            //
+            //              if (checkBox2 == value){
+            //                print("aprovado");
+            //                checkBox1 = false;
+            //                situacao = 'aprovado';
+            //              }
+            //
+            //
+            //       });
+            //     },
+            //   ),
+            //
+            // ],
+            // ),
 
 
           Padding(
             padding: const EdgeInsets.symmetric(vertical: 12.0),
             child:
-            ElevatedButton(
-              onPressed: () {
-                _criarCadastro(context);
-              },
-              child: Text('Submit')
+            SizedBox(
+              width: double.maxFinite,
+              child: ElevatedButton(
+                onPressed: () {
+                  _criarCadastro(context);
+                },
+                child: Text('Create',style: TextStyle(fontSize: 17),)
           ),
+            ),
           ),
         ],
       ),
@@ -123,11 +126,11 @@ class FormAlunoState extends State<FormAluno> {
   }
   void _criarCadastro(BuildContext context){
     final String nome = _controladorNome.text;
-    final String sala = _controladorSala.text;
+    final int conta = int.tryParse(_controladorConta.text)!;
     if (_formKey.currentState!.validate()) {
       ScaffoldMessenger.of(context)
           .showSnackBar(SnackBar(content: Text('Cadastro concluído')));
-      final cadastroCompleto = Produtos(nome, sala,situacao );
+      final cadastroCompleto = Produtos(0,nome,conta );
       Navigator.pop(context, cadastroCompleto);
     }
   }

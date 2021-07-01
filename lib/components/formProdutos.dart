@@ -1,15 +1,15 @@
 class Produtos {
-  final String nome;
-  final String sala;
-  final String situacao;
+  final int id;
+  final String name;
+  final int conta;
 
-  Produtos(this.nome,
-      this.sala,
-      this.situacao,);
+
+  Produtos(this.id,this.name,
+      this.conta);
 
 
   @override
   String toString() {
-    return 'Produtos{nome: $nome, sala: $sala, situacao: $situacao}';
+    return 'Produtos{id: $id, nome: $name, conta: $conta}';
   }
 }

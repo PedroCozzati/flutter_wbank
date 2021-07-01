@@ -6,7 +6,7 @@ class AppBarWidget extends PreferredSize {
         preferredSize: Size.fromHeight(300),
         child: Container(
           height: 290,
-          decoration: BoxDecoration(gradient: LinearGradient(colors: [Colors.black,Colors.indigo])),
+          decoration: BoxDecoration(gradient: LinearGradient(colors: [Colors.black87,Colors.indigo.shade500])),
           child:Stack(
             children: [
               Padding(
@@ -15,7 +15,7 @@ class AppBarWidget extends PreferredSize {
                   height: 240,
                   padding: const EdgeInsets.symmetric(horizontal: 5,vertical: 10),
                   width: 380,
-                  decoration: BoxDecoration( borderRadius: BorderRadius.circular(20),gradient: LinearGradient(colors: [Colors.indigo,Colors.purple])),
+                  decoration: BoxDecoration( borderRadius: BorderRadius.circular(20),gradient: LinearGradient(colors: [Colors.indigo.shade400,Colors.purple.shade400])),
                   child: Column(
                     children: [
                       Row(
@@ -52,13 +52,26 @@ class AppBarWidget extends PreferredSize {
                           ),
                           ),
                           Padding(
-                              padding:EdgeInsets.only(left:90.0,top:15) ,
-                              child: Container(child: Text('Seu Saldo:',style: TextStyle(color: Colors.white),))
-                          ),
-                          Padding(
-                            padding:EdgeInsets.only(left:5.0,top:15) ,
-                            child: Container(child: Text('RS:'+'0000000',style: TextStyle(color: Colors.white,fontWeight: FontWeight.bold),))
-                          ),
+                            padding: const EdgeInsets.only(left:90.0,top: 15),
+                            child: Container(
+                                decoration:BoxDecoration(color: Colors.white24,borderRadius: BorderRadius.circular(20)),
+                                width: 160,
+                                height:30,
+                                child:Row(
+                                  children: [
+                                    Padding(
+                                        padding:EdgeInsets.only(left:6.0,top:1) ,
+                                        child: Container(child: Text('Seu Saldo:',style: TextStyle(color: Colors.white),))
+                                    ),
+                                    Padding(
+                                        padding:EdgeInsets.only(left:0.0,top:1) ,
+                                        child: Container(child: Text('RS:'+'0000000',style: TextStyle(color: Colors.white,fontWeight: FontWeight.bold),))
+                                    ),
+                                  ],
+                                )
+                            ),
+                          )
+
                         ],
                       ),
                   ],
