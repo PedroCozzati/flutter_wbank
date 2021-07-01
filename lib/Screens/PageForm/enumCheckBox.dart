@@ -1,0 +1,4 @@
+enum Escolha {
+  EscolhaAluno,
+  EscolhaProfessor,
+}
