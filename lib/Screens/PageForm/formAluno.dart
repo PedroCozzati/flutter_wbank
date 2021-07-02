@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application/Screens/PageForm/enumCheckBox.dart';
 import 'package:flutter_application/components/formProdutos.dart';
+import 'package:flutter_application/database/app_database.dart';
 
 class FormAluno extends StatefulWidget {
   @override
@@ -61,50 +62,6 @@ class FormAlunoState extends State<FormAluno> {
 
             },
           ),
-            // Row(
-            //   children: <Widget>[
-            //        Text("\nRetido"),
-            //
-            //        Checkbox(
-            //          checkColor: Colors.white,
-            //            value: checkBox1,
-            //            onChanged: (value) {
-            //            setState(() {
-            //              checkBox1 = value!;
-            //              if (checkBox1 == value){
-            //                print("retido");
-            //                checkBox2 = false;
-            //                situacao = 'retido';
-            //              }
-            //           });
-            //          },
-            //
-            //
-            //         ),
-            //
-            //         Text("\nAprovado"),
-            //         Checkbox(
-            //            checkColor: Colors.white,
-            //            value: checkBox2,
-            //            onChanged: (value) {
-            //            setState(() {
-            //              checkBox2 = value!;
-            //
-            //              if (checkBox2 == value){
-            //                print("aprovado");
-            //                checkBox1 = false;
-            //                situacao = 'aprovado';
-            //              }
-            //
-            //
-            //       });
-            //     },
-            //   ),
-            //
-            // ],
-            // ),
-
-
           Padding(
             padding: const EdgeInsets.symmetric(vertical: 12.0),
             child:
@@ -127,11 +84,11 @@ class FormAlunoState extends State<FormAluno> {
   void _criarCadastro(BuildContext context){
     final String nome = _controladorNome.text;
     final int conta = int.tryParse(_controladorConta.text)!;
+    final Produtos newContact = Produtos(0, nome, conta);
     if (_formKey.currentState!.validate()) {
       ScaffoldMessenger.of(context)
-          .showSnackBar(SnackBar(content: Text('Cadastro concluído')));
-      final cadastroCompleto = Produtos(0,nome,conta );
-      Navigator.pop(context, cadastroCompleto);
+          .showSnackBar(SnackBar(content: Text('Conta adicionada')));
+      save(newContact).then((id)=>Navigator.pop(context));
     }
   }
 }

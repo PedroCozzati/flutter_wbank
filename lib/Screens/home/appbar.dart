@@ -6,7 +6,7 @@ class AppBarWidget extends PreferredSize {
         preferredSize: Size.fromHeight(300),
         child: Container(
           height: 290,
-          decoration: BoxDecoration(gradient: LinearGradient(colors: [Colors.black87,Colors.indigo.shade500])),
+          decoration: BoxDecoration(gradient: LinearGradient(colors: [Colors.purple.shade100,Colors.indigo.shade100])),
           child:Stack(
             children: [
               Padding(

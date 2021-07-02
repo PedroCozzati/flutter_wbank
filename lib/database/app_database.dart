@@ -12,7 +12,8 @@ Future<Database> createDatabase(){
               'name TEXT, '
               'conta INTEGER)'
       );
-    },version: 1);
+    },onDowngrade: onDatabaseDowngradeDelete,version: 1);
+
   });
 }
 
@@ -41,3 +42,4 @@ Future<List<Produtos>> findAll(){
     });
   });
 }
+

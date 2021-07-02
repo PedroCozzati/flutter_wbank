@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application/Screens/PageForm/formAluno.dart';
 import 'package:flutter_application/components/formProdutos.dart';
 import 'package:flutter_application/database/app_database.dart';
 
@@ -10,6 +11,7 @@ class ListTransfer extends StatelessWidget {
 
     @override
     Widget build(BuildContext context) {
+
       return Scaffold(
           appBar: AppBar(
           title: Text("Transferências"),
@@ -31,7 +33,18 @@ class ListTransfer extends StatelessWidget {
               child: Center(child: CircularProgressIndicator()),
             );
           }
-        )
+        ),
+          floatingActionButton: FloatingActionButton(
+          child: Icon(Icons.add,),
+          onPressed: () => Navigator.of(context).push(
+                MaterialPageRoute(
+                    builder: (context) => FormAluno()
+                ),
+          ).then((value) {
+             Future.delayed(Duration(seconds: 1)).then((value)=>findAll());
+          }),
+
+          )
       );
   }
 }
@@ -43,16 +56,21 @@ class _ContactItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return Card(
       child: ListTile(
-        title: Text(
-          contact.name,
-          style: TextStyle(
-            fontSize: 24
-          ),
+        title: Row(
+          children: [
+            Icon(Icons.person),
+            Text(' '+
+              contact.name,
+              style: TextStyle(
+                fontSize: 21
+              ),
+            ),
+          ],
         ),
         subtitle: Text(
           contact.conta.toString(),
           style: TextStyle(
-            fontSize: 16
+            fontSize: 14
           ),
         ),
       ),
