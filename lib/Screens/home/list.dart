@@ -1,9 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-
-import 'package:flutter_application/Screens/PageInfo/ListInfoMain.dart';
-import 'package:flutter_application/Screens/PageProfessor/ListProfessorMain.dart';
-import 'package:flutter_application/Screens/Transferencias/ListTransferMain.dart';
+import 'package:flutter_application/Screens/Guardar/guardar_dinheiro.dart';
+import 'package:flutter_application/Screens/Pix/pix_screen.dart';
+import 'package:flutter_application/Screens/splash/splashScreen.dart';
 
 class ListHome extends StatefulWidget {
   const ListHome({Key? key}) : super(key: key);
@@ -46,27 +45,35 @@ class _ListHomeState extends State<ListHome> {
                                     width: 300,
                                     height: 200,
                                     decoration: BoxDecoration(gradient: LinearGradient(colors: [Colors.indigo.shade400,Colors.purple.shade400]),borderRadius: BorderRadius.circular(20)),
+                                    
                                     child:Row(children: [
                                       Column(
                                         mainAxisAlignment: MainAxisAlignment.center,
                                         children:[
                                           Padding(
                                             padding: const EdgeInsets.only(left:35.0),
-                                            child: Container(
-                                              width:238,
-                                              child: Card(
-                                                child: ListTile(
-                                                  title: Row(children: [
-                                                    Icon(Icons.money,size: 18,),
-                                                    Text('Dinheiro guardado',style: TextStyle(fontSize: 14),),
-                                                  ],
+                                            child: InkWell(
+                                              onTap: (){
+                                                Navigator.push(context, MaterialPageRoute(builder: (context){
+                                                  return GuardarDinheiro();
+                                                }));
+                                              },
+                                              child: Container(
+                                                width:238,
+                                                child: Card(
+                                                  child: ListTile(
+                                                    title: Row(children: [
+                                                      Icon(Icons.money,size: 18,),
+                                                      Text('Dinheiro guardado',style: TextStyle(fontSize: 14),),
+                                                    ],
+                                                    ),
+                                                    subtitle: Text(
+                                                        'BRL 20.00',
+                                                        style:TextStyle(fontSize: 20) ,
                                                   ),
-                                                  subtitle: Text(
-                                                      'BRL 20.00',
-                                                      style:TextStyle(fontSize: 20) ,
-                                                ),
-                                              )
+                                                )
                                         ),
+                                              ),
                                             ),
                                           ),
                                           Padding(
@@ -162,16 +169,19 @@ class _ListHomeState extends State<ListHome> {
                               onTap: (){
                                 print('teste');
                                 Navigator.push(context, MaterialPageRoute(builder: (context){
-                                  return ListTransfer();
+                                  return PixScreen();
                                 }));
                                 },
                               child: Container(
                                 width: 150,
                                 height: 100,
                                 decoration: BoxDecoration(borderRadius: BorderRadius.circular(10), color: cor_cartao,),
-                                child: Padding(
-                                  padding: const EdgeInsets.all(8.0),
-                                  child: Text('Transferências',style: TextStyle(color: Colors.white,fontSize: 14),),
+                                child: Center(
+                                  child: Container(
+                                    padding:const EdgeInsets.all(8.0),
+                                    child: Text('Pix',style: TextStyle(color: Colors.white,fontSize: 16),),
+
+                                  ),
                                 ),
                               ),
                             ),
@@ -196,9 +206,11 @@ class _ListHomeState extends State<ListHome> {
                                       color: cor_cartao,
                                     borderRadius: BorderRadius.circular(10)
                                   ),
-                                  child: Padding(
-                                    padding: const EdgeInsets.all(8.0),
-                                    child: Text('Cartão',style: TextStyle(color: Colors.white,fontSize: 14),),
+                                  child:Center(
+                                    child: Container(
+                                      padding:const EdgeInsets.all(8.0),
+                                      child: Text('Pix',style: TextStyle(color: Colors.white,fontSize: 16),),
+                                    ),
                                   ),
                                 ),
                             ),
@@ -222,9 +234,11 @@ class _ListHomeState extends State<ListHome> {
                                     color: cor_cartao,
                                     borderRadius: BorderRadius.circular(10)
                                 ),
-                                child: Padding(
-                                  padding: const EdgeInsets.all(8.0),
-                                  child: Text('Cartão',style: TextStyle(color: Colors.white,fontSize: 14),),
+                                child: Center(
+                                  child: Container(
+                                    padding:const EdgeInsets.all(8.0),
+                                    child: Text('Pix',style: TextStyle(color: Colors.white,fontSize: 16),),
+                                  ),
                                 ),
                               ),
                             ),
@@ -248,9 +262,11 @@ class _ListHomeState extends State<ListHome> {
                                     color: cor_cartao,
                                     borderRadius: BorderRadius.circular(10)
                                 ),
-                                child: Padding(
-                                  padding: const EdgeInsets.all(8.0),
-                                  child: Text('Cartão',style: TextStyle(color: Colors.white,fontSize: 14),),
+                                child: Center(
+                                  child: Container(
+                                    padding:const EdgeInsets.all(8.0),
+                                    child: Text('Pix',style: TextStyle(color: Colors.white,fontSize: 16),),
+                                  ),
                                 ),
                               ),
                             ),
@@ -274,9 +290,11 @@ class _ListHomeState extends State<ListHome> {
                                    color: cor_cartao,
                                     borderRadius: BorderRadius.circular(10)
                                 ),
-                                child: Padding(
-                                  padding: const EdgeInsets.all(8.0),
-                                  child: Text('Cartão',style: TextStyle(color: Colors.white,fontSize: 14),),
+                                child: Center(
+                                  child: Container(
+                                    padding:const EdgeInsets.all(8.0),
+                                    child: Text('Pix',style: TextStyle(color: Colors.white,fontSize: 16),),
+                                  ),
                                 ),
                               ),
                             ),
