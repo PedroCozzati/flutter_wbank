@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application/Screens/PageForm/formTransfer.dart';
+import 'package:flutter_application/Screens/Pix/formTransferir.dart';
 import 'package:flutter_application/components/contacts.dart';
 import 'package:flutter_application/database/app_database.dart';
 import 'package:flutter_application/database/dao/contact_dao.dart';
@@ -58,7 +59,7 @@ class ListTransfer extends StatefulWidget {
                   return ListView.builder(
                     itemBuilder: (context, index){
                       final Contact contact = contacts[index];
-                      return _ContactItem(contact);
+                      return ContactItem(contact);
                     },
                     itemCount: contacts.length,
                   );
@@ -76,16 +77,18 @@ class ListTransfer extends StatefulWidget {
   }
 }
 
-class _ContactItem extends StatelessWidget {
+class ContactItem extends StatelessWidget {
   final Contact contact;
-  _ContactItem(this.contact);
+  ContactItem(this.contact);
   @override
   Widget build(BuildContext context) {
     return Card(
       child: ListTile(
         onTap: (){
-          //tela confirmação pix
-        },
+      Navigator.push(context, MaterialPageRoute(builder: (context){
+        return FormTransferir('');
+          }));
+      },
         title: Row(
           children: [
             Icon(Icons.person),

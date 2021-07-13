@@ -1,7 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_application/Screens/CreditCard/credit_card.dart';
 import 'package:flutter_application/Screens/Guardar/guardar_dinheiro.dart';
 import 'package:flutter_application/Screens/Pix/pix_screen.dart';
+import 'package:flutter_application/Screens/SenhaScreen/senha.dart';
 import 'package:flutter_application/Screens/splash/splashScreen.dart';
 
 class ListHome extends StatefulWidget {
@@ -129,7 +131,7 @@ class _ListHomeState extends State<ListHome> {
                                       ),
                                       Center(
                                         child: Text(
-                                          'Cartão de crédito',
+                                          '     Investimentos',
                                           style:TextStyle(fontSize: 30) ,
                                         ),
                                       ),
@@ -199,17 +201,25 @@ class _ListHomeState extends State<ListHome> {
                             height: 80,
                             width: 110,
                                 child:
-                                Container(
-                                  width: 150,
-                                  height: 100,
-                                  decoration: BoxDecoration(
-                                      color: cor_cartao,
-                                    borderRadius: BorderRadius.circular(10)
-                                  ),
-                                  child:Center(
-                                    child: Container(
-                                      padding:const EdgeInsets.all(8.0),
-                                      child: Text('Pix',style: TextStyle(color: Colors.white,fontSize: 16),),
+                                InkWell(
+                                  onTap: (){
+                                    print('teste');
+                                    Navigator.push(context, MaterialPageRoute(builder: (context){
+                                      return Senha();
+                                    }));
+                                    },
+                                  child: Container(
+                                    width: 150,
+                                    height: 100,
+                                    decoration: BoxDecoration(
+                                        color: cor_cartao,
+                                      borderRadius: BorderRadius.circular(10)
+                                    ),
+                                    child:Center(
+                                      child: Container(
+                                        padding:const EdgeInsets.all(20.0),
+                                        child: Text('Cartão de crédito',style: TextStyle(color: Colors.white,fontSize: 16),),
+                                      ),
                                     ),
                                   ),
                                 ),

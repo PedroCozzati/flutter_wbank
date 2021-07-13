@@ -27,9 +27,9 @@ class PixScreen extends StatelessWidget {
                   Container(
                     width: 400,
                     height: 300,
-                    decoration: BoxDecoration(gradient: LinearGradient(colors: [Colors.purple.shade300,Colors.indigo.shade300]),
+                    decoration: BoxDecoration(gradient: LinearGradient(colors: [Colors.purple.shade400,Colors.indigo.shade400],),
                     ),
-                  ),
+                    child:  Image(image:NetworkImage('https://th.bing.com/th/id/R.32182b40e44b54fde1c0bd27a98ef35b?rik=MnBXNJU27xMT6Q&pid=ImgRaw'),fit: BoxFit.contain,height: 50,width: 50,)),
                 ]
             ),
             Row(

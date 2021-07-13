@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application/Screens/PageForm/enumCheckBox.dart';
+import 'package:flutter_application/Screens/Pix/formTransferir.dart';
 import 'package:flutter_application/components/contacts.dart';
 import 'package:flutter_application/database/app_database.dart';
 import 'package:flutter_application/database/dao/contact_dao.dart';
@@ -87,10 +88,12 @@ class FormAlunoState extends State<FormAluno> {
     final String nome = _controladorNome.text;
     final int conta = int.tryParse(_controladorConta.text)!;
     final Contact newContact = Contact(0, nome, conta);
+    FormTransferir(nome);
     if (_formKey.currentState!.validate()) {
       ScaffoldMessenger.of(context)
           .showSnackBar(SnackBar(content: Text('Conta adicionada')));
       _dao.save(newContact).then((id)=>Navigator.pop(context));
+
     }
   }
 }

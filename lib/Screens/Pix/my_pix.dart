@@ -12,7 +12,15 @@ class MyPix extends StatelessWidget {
       body: Container(
         child: Column(
           children: [
-            Text('Chave: 11977748028')
+            Card(child: Container(
+              height:100,
+              width:400 ,
+              child: Icon(Icons.vpn_key_outlined,size: 90,),)),
+            Card(
+              child: ListTile(
+              title:Center(child: Text('Sua chave: 11977748028'))
+              ),
+            ),
           ],
         ),
       ),
