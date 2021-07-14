@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_application/Screens/Guardar/formGuardar.dart';
 import 'package:flutter_application/Screens/Guardar/formInvestir.dart';
@@ -12,6 +13,7 @@ class GuardarDinheiro extends StatefulWidget {
 
 class _GuardarDinheiroState extends State<GuardarDinheiro> {
   @override
+
   Widget build(BuildContext context) {
     final Guardar guardar;
     return Scaffold(appBar: AppBar(
@@ -39,8 +41,9 @@ class _GuardarDinheiroState extends State<GuardarDinheiro> {
                       Container(
                         width: 350,
                           height: 35,
-                          decoration: BoxDecoration(color: Colors.white,
+                          decoration: BoxDecoration(gradient: LinearGradient(colors: [Colors.purple.shade50,Colors.indigo.shade50]),
                             borderRadius: BorderRadius.circular(14),
+                            border: Border.all(color: Colors.indigo),
                           ),
                           child: Center(child: Text('Rendimento: 2%',style: TextStyle(color: Colors.purple,fontSize: 18,fontWeight: FontWeight.bold),)),
                       ),
@@ -48,8 +51,10 @@ class _GuardarDinheiroState extends State<GuardarDinheiro> {
                       Container(
                         width: 350,
                         height: 150,
-                        decoration: BoxDecoration(color: Colors.white,
+                        decoration: BoxDecoration(gradient: LinearGradient(colors: [Colors.purple.shade50,Colors.indigo.shade50]),
                           borderRadius: BorderRadius.circular(14),
+                          border: Border.all(color: Colors.indigo),
+
                         ),
                         child: Center(child:
                         RichText(
@@ -57,10 +62,10 @@ class _GuardarDinheiroState extends State<GuardarDinheiro> {
                               TextSpan(
                                   text: 'BRL ',
                                   style: TextStyle(
-                                      fontSize:50,fontWeight: FontWeight.bold, color: Colors.blueGrey.shade900)),
+                                      fontSize:40,fontWeight: FontWeight.bold, color: Colors.blueGrey.shade900)),
                               TextSpan(
-                                  text: '500.00 ',
-                                  style: TextStyle(fontSize: 50,color: Colors.blueAccent)),
+                                  text: '222500.00 ',
+                                  style: TextStyle(fontSize: 40,color: Colors.blueAccent)),
 
                         ])),
                       )
@@ -78,6 +83,7 @@ class _GuardarDinheiroState extends State<GuardarDinheiro> {
                 Container(
                   width: 205,
                   height: 200,
+                  decoration: BoxDecoration(gradient: LinearGradient(colors: [Colors.purple.shade50,Colors.indigo.shade50]),),
                   child: InkWell(
                     onTap: (){
                      Navigator.push(context, MaterialPageRoute(builder: (context){
@@ -105,6 +111,7 @@ class _GuardarDinheiroState extends State<GuardarDinheiro> {
                 Container(
                   width: 205,
                   height: 200,
+                  decoration: BoxDecoration(gradient: LinearGradient(colors: [Colors.purple.shade50,Colors.indigo.shade50]),),
                   child: InkWell(
                     onTap: (){
                       Navigator.push(context, MaterialPageRoute(builder: (context){
