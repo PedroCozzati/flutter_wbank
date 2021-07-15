@@ -1,27 +1,29 @@
 import 'package:flutter/material.dart';
+import 'package:sizer/sizer.dart';
 
 class AppBarWidget extends PreferredSize {
   AppBarWidget():
         super(
-        preferredSize: Size.fromHeight(300),
+        preferredSize: Size.fromHeight(45.h),
         child: Container(
-          height: 290,
+          height: 45.h,
+          width: 50.w,
           decoration: BoxDecoration(gradient: LinearGradient(colors: [Colors.purple.shade100,Colors.indigo.shade100])),
           child:Stack(
             children: [
               Padding(
                 padding: const EdgeInsets.only(left:18.0,top: 25),
                 child: Container(
-                  height: 240,
+                  height: 45.h,
                   padding: const EdgeInsets.symmetric(horizontal: 5,vertical: 10),
-                  width: 380,
+                  width: 90.w,
                   decoration: BoxDecoration( borderRadius: BorderRadius.circular(20),gradient: LinearGradient(colors: [Colors.indigo.shade400,Colors.purple.shade400])),
                   child: Column(
                     children: [
                       Row(
                         children:[
                           Padding(
-                            padding:EdgeInsets.only(left:100.0,top:40) ,
+                            padding:EdgeInsets.only(left:50.sp,top:40) ,
                               child: Container(
                                 child:Center(
                                     child: Text('WebBank',style: TextStyle(color: Colors.white,fontSize: 40,fontWeight: FontWeight.bold),

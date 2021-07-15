@@ -5,6 +5,7 @@ import 'package:flutter_application/Screens/Guardar/guardar_dinheiro.dart';
 import 'package:flutter_application/Screens/Pix/pix_screen.dart';
 import 'package:flutter_application/Screens/SenhaScreen/senha.dart';
 import 'package:flutter_application/Screens/splash/splashScreen.dart';
+import 'package:sizer/sizer.dart';
 
 class ListHome extends StatefulWidget {
   const ListHome({Key? key}) : super(key: key);
@@ -21,31 +22,31 @@ class _ListHomeState extends State<ListHome> {
       return Stack(
         children: [
               Padding(
-                padding: const EdgeInsets.only(bottom:1.0),
+                padding: const EdgeInsets.only(bottom:12.0),
                 child: Container(
                   decoration: BoxDecoration(gradient: LinearGradient(colors: [Colors.purple.shade100,Colors.indigo.shade100])),
-                  width:420 ,
-                  height: 450,
+                  width:100.w ,
+                  height: 100.h,
                 ),
               ),
           Column(
             mainAxisAlignment: MainAxisAlignment.end,
             children: [
               Padding(
-                padding: const EdgeInsets.only(left:7.0,bottom: 15),
+                padding: const EdgeInsets.only(left:0,top: 20),
                 child: Container(
-                  width: 375,
-                  height: 250,
+                  width: 90.w,
+                  height: 40.h,
                   decoration: BoxDecoration(gradient: LinearGradient(colors: [Colors.indigo.shade400,Colors.purple.shade400]),borderRadius: BorderRadius.circular(20) ),
                     child: ListView(
                             scrollDirection: Axis.horizontal ,
                             children: [
                               Row(
                                 children: [
-                                  Container(width: 30),
+                                  Container(width: 10.w),
                                   Container(
-                                    width: 300,
-                                    height: 200,
+                                    width: 60.w,
+                                    height: 30.h,
                                     decoration: BoxDecoration(gradient: LinearGradient(colors: [Colors.indigo.shade400,Colors.purple.shade400]),borderRadius: BorderRadius.circular(20)),
                                     
                                     child:Row(children: [
@@ -53,7 +54,7 @@ class _ListHomeState extends State<ListHome> {
                                         mainAxisAlignment: MainAxisAlignment.center,
                                         children:[
                                           Padding(
-                                            padding: const EdgeInsets.only(left:35.0),
+                                            padding: const EdgeInsets.only(left:0.0),
                                             child: InkWell(
                                               onTap: (){
                                                 Navigator.push(context, MaterialPageRoute(builder: (context){
@@ -61,17 +62,17 @@ class _ListHomeState extends State<ListHome> {
                                                 }));
                                               },
                                               child: Container(
-                                                width:238,
+                                                width:60.w,
                                                 child: Card(
                                                   child: ListTile(
                                                     title: Row(children: [
-                                                      Icon(Icons.money,size: 18,),
-                                                      Text('Dinheiro guardado',style: TextStyle(fontSize: 14),),
+                                                      Icon(Icons.money,size: 18.sp,),
+                                                      Text('Dinheiro guardado',style: TextStyle(fontSize: 14.sp),),
                                                     ],
                                                     ),
                                                     subtitle: Text(
                                                         'BRL 20.00',
-                                                        style:TextStyle(fontSize: 20) ,
+                                                        style:TextStyle(fontSize: 20.sp) ,
                                                   ),
                                                 )
                                         ),
@@ -79,10 +80,10 @@ class _ListHomeState extends State<ListHome> {
                                             ),
                                           ),
                                           Padding(
-                                            padding: const EdgeInsets.only(left:35.0),
+                                            padding: const EdgeInsets.only(left:0.0),
                                             child: Container(
-                                              width:238,
-                                              height: 100,
+                                              width:60.w,
+                                              height: 18.h,
                                               child: Card(
                                                   child: ListTile(
                                                     title: Row(children: [
@@ -114,20 +115,20 @@ class _ListHomeState extends State<ListHome> {
                                       ),
                                       Padding(
                                         padding: const EdgeInsets.only(left:15.0),
-                                        child: Container(width: 10,),
+                                        child: Container(width: 10.w,),
                                       ),
                                     ],
                                     )
                                   ),
-                                  Container(width: 15,),
+                                  Container(width: 15.w,),
                                   Container(
-                                    width: 300,
-                                    height: 200,
+                                    width: 300.w,
+                                    height: 200.h,
                                     decoration: BoxDecoration(gradient: LinearGradient(colors: [Colors.indigo.shade400,Colors.purple.shade400]),borderRadius: BorderRadius.circular(20)),
                                     child: Row(children: [
                                       Padding(
                                         padding: const EdgeInsets.only(left:5),
-                                        child: Container(width: 10,),
+                                        child: Container(width: 10.w,),
                                       ),
                                       Center(
                                         child: Text(
@@ -139,7 +140,7 @@ class _ListHomeState extends State<ListHome> {
                                     ],
                                     )
                                   ),
-                                  Container(width: 30,),
+                                  Container(width: 30.w,),
                                 ],
                               )
                             ],
@@ -148,8 +149,8 @@ class _ListHomeState extends State<ListHome> {
                       ),
                     ),
               Container(
-                width: 405,
-                height: 100,
+                width: 405.w,
+                height: 100.h,
                 child: ListView(
                   scrollDirection: Axis.horizontal ,
                   children: <Widget>[
@@ -158,14 +159,14 @@ class _ListHomeState extends State<ListHome> {
                     crossAxisAlignment: CrossAxisAlignment.end,
                     children: [
                     Container(
-                        width: 120,
-                        height: 80,
+                        width: 120.w,
+                        height: 80.h,
                         child:Column(
                       mainAxisAlignment: MainAxisAlignment.end,
                       children: [
                         Container(
-                          height: 80,
-                          width: 110,
+                          height: 80.h,
+                          width: 110.w,
                             child:
                             InkWell(
                               onTap: (){
@@ -175,8 +176,8 @@ class _ListHomeState extends State<ListHome> {
                                 }));
                                 },
                               child: Container(
-                                width: 150,
-                                height: 100,
+                                width: 150.w,
+                                height: 100.h,
                                 decoration: BoxDecoration(borderRadius: BorderRadius.circular(10), color: cor_cartao,),
                                 child: Center(
                                   child: Container(
@@ -192,14 +193,14 @@ class _ListHomeState extends State<ListHome> {
                         ),
                         ),
                     Container(
-                      width: 120,
-                      height: 80,
+                      width: 120.w,
+                      height: 80.h,
                       child:Column(
                         mainAxisAlignment: MainAxisAlignment.end,
                         children: [
                           Container(
-                            height: 80,
-                            width: 110,
+                            height: 80.h,
+                            width: 110.w,
                                 child:
                                 InkWell(
                                   onTap: (){
@@ -209,8 +210,8 @@ class _ListHomeState extends State<ListHome> {
                                     }));
                                     },
                                   child: Container(
-                                    width: 150,
-                                    height: 100,
+                                    width: 150.w,
+                                    height: 100.h,
                                     decoration: BoxDecoration(
                                         color: cor_cartao,
                                       borderRadius: BorderRadius.circular(10)
@@ -228,18 +229,18 @@ class _ListHomeState extends State<ListHome> {
                       ),
                     ),
                       Container(
-                        width: 120,
-                        height: 80,
+                        width: 120.w,
+                        height: 80.h,
                         child:Column(
                           mainAxisAlignment: MainAxisAlignment.end,
                           children: [
                             Container(
-                              height: 80,
-                              width: 110,
+                              height: 80.h,
+                              width: 110.w,
                               child:
                               Container(
-                                width: 150,
-                                height: 100,
+                                width: 150.w,
+                                height: 100.h,
                                 decoration: BoxDecoration(
                                     color: cor_cartao,
                                     borderRadius: BorderRadius.circular(10)
@@ -256,18 +257,18 @@ class _ListHomeState extends State<ListHome> {
                         ),
                       ),
                       Container(
-                        width: 120,
-                        height: 80,
+                        width: 120.w,
+                        height: 80.h,
                         child:Column(
                           mainAxisAlignment: MainAxisAlignment.end,
                           children: [
                             Container(
-                              height: 80,
-                              width: 110,
+                              height: 80.h,
+                              width: 110.w,
                               child:
                               Container(
-                                width: 150,
-                                height: 100,
+                                width: 150.w,
+                                height: 100.h,
                                 decoration: BoxDecoration(
                                     color: cor_cartao,
                                     borderRadius: BorderRadius.circular(10)
@@ -284,18 +285,18 @@ class _ListHomeState extends State<ListHome> {
                         ),
                       ),
                       Container(
-                        width: 120,
-                        height: 80,
+                        width: 120.w,
+                        height: 80.h,
                         child:Column(
                           mainAxisAlignment: MainAxisAlignment.end,
                           children: [
                             Container(
-                              height: 80,
-                              width: 110,
+                              height: 80.h,
+                              width: 110.w,
                               child:
                               Container(
-                                width: 150,
-                                height: 100,
+                                width: 150.w,
+                                height: 100.h,
                                 decoration: BoxDecoration(
                                    color: cor_cartao,
                                     borderRadius: BorderRadius.circular(10)
@@ -318,7 +319,7 @@ class _ListHomeState extends State<ListHome> {
                 ),
               ),
 
-              Container(width: 50,height: 20,),
+              Container(width: 50.w,height: 20.h,),
             ],
           ),
         ],
