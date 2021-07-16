@@ -1,7 +1,9 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_application/Screens/Pix/ListTransferMain.dart';
 
 import 'my_pix.dart';
+import 'package:sizer/sizer.dart';
 
 class PixScreen extends StatelessWidget {
   const PixScreen({Key? key}) : super(key: key);
@@ -13,32 +15,33 @@ class PixScreen extends StatelessWidget {
         title: Text('Pix'),
       ) ,
       body: Container(
-        width: 430,
-        height: 620,
+        width: 430.sp,
+        height: 700.sp,
         decoration: BoxDecoration(gradient: LinearGradient(colors: [Colors.purple.shade100,Colors.indigo.shade100]),
       ),
         child: Column (
-          mainAxisAlignment: MainAxisAlignment.end,
+          mainAxisAlignment: MainAxisAlignment.start,
           children: [
             Row(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Container(
-                    width: 400,
-                    height: 300,
+                    width: 300.sp,
+                    height: 250.sp,
                     decoration: BoxDecoration(gradient: LinearGradient(colors: [Colors.purple.shade400,Colors.indigo.shade400],),
                     ),
-                    child:  Image(image:NetworkImage('https://th.bing.com/th/id/R.32182b40e44b54fde1c0bd27a98ef35b?rik=MnBXNJU27xMT6Q&pid=ImgRaw'),fit: BoxFit.contain,height: 50,width: 50,)),
+                    child:  Image(image:NetworkImage('https://th.bing.com/th/id/R.32182b40e44b54fde1c0bd27a98ef35b?rik=MnBXNJU27xMT6Q&pid=ImgRaw'),fit: BoxFit.contain,height: 50.sp,width: 50.sp,)),
                 ]
             ),
             Row(
-              crossAxisAlignment: CrossAxisAlignment.end,
+              mainAxisAlignment: MainAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
 
                 Container(
-                  width: 205,
-                  height: 200,
+                  width:150.sp,
+                  height: 150.sp,
                   child: InkWell(
                     onTap: (){
                       Navigator.push(context, MaterialPageRoute(builder: (context){
@@ -49,12 +52,12 @@ class PixScreen extends StatelessWidget {
                       color: Colors.white,
                       child: Center(
                         child: Container(
-                          width: 180,
-                          height: 75,
+                          width: 90.sp,
+                          height: 75.sp,
                           child:Column(
                             children: [
-                              Text('Transferir',style: TextStyle(fontSize: 20),),
-                              Center(child: Icon(Icons.attach_money,size: 50,color: Colors.blueGrey,),)
+                              Text('Transferir',style: TextStyle(fontSize: 20.sp),),
+                              Center(child: Icon(Icons.attach_money,size: 30.sp,color: Colors.blueGrey,),)
                           ],
                           ),
                         ),
@@ -63,8 +66,8 @@ class PixScreen extends StatelessWidget {
                   ),
                 ),
                 Container(
-                  width: 205,
-                  height: 200,
+                  width:150.sp,
+                  height: 150.sp,
                   child: InkWell(
                     onTap: (){
                       Navigator.push(context, MaterialPageRoute(builder: (context){
@@ -75,12 +78,12 @@ class PixScreen extends StatelessWidget {
                       color: Colors.white,
                       child: Center(
                         child: Container(
-                          width: 180,
-                          height: 75,
+                          width: 120.sp,
+                          height: 75.sp,
                           child:Column(
                             children: [
-                              Text('Sua chave Pix',style: TextStyle(fontSize: 20),),
-                              Center(child: Icon(Icons.vpn_key_rounded,size: 50,color: Colors.blueGrey,),)
+                              Text('Sua chave Pix',style: TextStyle(fontSize: 20.sp),),
+                              Center(child: Icon(Icons.vpn_key_rounded,size: 30.sp,color: Colors.blueGrey,),)
                             ],
                           ),
                         ),
@@ -91,12 +94,7 @@ class PixScreen extends StatelessWidget {
 
               ],
             ),
-            Container(
-              height: 100,
-              width: 400,
-              decoration: BoxDecoration(gradient: LinearGradient(colors: [Colors.purple.shade300,Colors.indigo.shade300]),
-              ),
-            ),
+
         ],
         )
       ),

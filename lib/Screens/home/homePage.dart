@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 
 import 'package:flutter_application/Screens/home/appbar.dart';
 import 'package:flutter_application/Screens/home/list.dart';
+import 'package:sizer/sizer.dart';
 
 class MyHomePage extends StatefulWidget {
   MyHomePage({Key? key}) : super(key: key);
@@ -13,20 +14,7 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
 
-  void _AddNovoAluno() {
-    setState(() {
-      //inputBox para inserir aluno
-      //atualizar lista de alunos cadastrados;
-    });
-  }
-
-  void _RemoverAluno(){
-    setState(() {
-      //selecionar aluno para remover da lista
-    });
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -34,7 +22,11 @@ class _MyHomePageState extends State<MyHomePage> {
     return Scaffold(
       appBar: AppBarWidget(
       ),
-      body: ListHome(),
+      body: Stack(children: [ Container(
+        height: 500.sp,
+        width: 500.sp,
+        decoration: BoxDecoration(gradient: LinearGradient(colors: [Colors.purple.shade100,Colors.indigo.shade100])),
+      ),ListHome()],),
 
     );
   }

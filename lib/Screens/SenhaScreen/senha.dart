@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_application/Screens/CreditCard/credit_card.dart';
+import 'package:sizer/sizer.dart';
 
 class Senha extends StatefulWidget {
   const Senha({Key? key}) : super(key: key);
@@ -15,9 +16,9 @@ class _SenhaState extends State<Senha> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-          width: 430,
-          height: 690,
-          padding: EdgeInsets.only(top: 20),
+          width: 430.sp,
+          height: 690.sp,
+          padding: EdgeInsets.only(top: 15.sp),
           decoration: BoxDecoration(gradient: LinearGradient(colors: [Colors.purple.shade100,Colors.indigo.shade100]),
           ),
           child:  Column (
@@ -25,14 +26,14 @@ class _SenhaState extends State<Senha> {
               children: [
                 Container(
                   color: Colors.white60,
-                  height: 100,
-                  width: 400,
+                  height: 80.sp,
+                  width: 250.sp,
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.start,
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                    IconButton(icon: Icon(Icons.arrow_back_outlined), onPressed:(){ Navigator.pop(context);}),
-                    Text('    Digite sua senha para continuar',style: TextStyle(color: Colors.deepPurple.shade900,fontWeight: FontWeight.bold,fontSize: 20),)
+                    IconButton(icon: Icon(Icons.arrow_back_outlined,size:20.sp), onPressed:(){ Navigator.pop(context);}),
+                    Text('    Digite sua senha para continuar',style: TextStyle(color: Colors.deepPurple.shade900,fontWeight: FontWeight.bold,fontSize: 14.sp),)
                   ],),
                 ),
                 Expanded(
@@ -41,21 +42,21 @@ class _SenhaState extends State<Senha> {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Container(
-                            width: 400,
-                            height: 400,
+                            width: 250.sp,
+                            height: 400.sp,
                             decoration: BoxDecoration(gradient: LinearGradient(colors: [Colors.purple.shade100,Colors.indigo.shade100],),
                             ),
                             child: Row(
                               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                               children: [
-                              Container(width: 50,height: 50,decoration: BoxDecoration(border:Border.all(color:Colors.black87),color: Colors.white60),
+                              Container(width: 40.sp,height: 40.sp,decoration: BoxDecoration(border:Border.all(color:Colors.black87),color: Colors.white60),
                                 child: TextField(
                                   maxLength: 1,
                                   autofocus: true,
                                   textInputAction: TextInputAction.next,
                                   keyboardType: TextInputType.numberWithOptions(),
                                   textAlign: TextAlign.center,
-                                  style: TextStyle(fontSize: 20),
+                                  style: TextStyle(fontSize: 20.sp),
                                   decoration: InputDecoration(
                                     border: InputBorder.none,
                                     counterText: '',
@@ -63,14 +64,14 @@ class _SenhaState extends State<Senha> {
                                   ),
                                 ),
                               ),
-                              Container(width: 50,height: 50,decoration: BoxDecoration(border:Border.all(color:Colors.black87),color: Colors.white60),
+                              Container(width: 40.sp,height: 40.sp,decoration: BoxDecoration(border:Border.all(color:Colors.black87),color: Colors.white60),
                                 child: TextField(
                                   maxLength: 1,
                                   autofocus: true,
                                   textInputAction: TextInputAction.next,
                                   keyboardType: TextInputType.numberWithOptions(),
                                   textAlign: TextAlign.center,
-                                  style: TextStyle(fontSize: 20),
+                                  style: TextStyle(fontSize: 20.sp),
                                   decoration: InputDecoration(
                                     border: InputBorder.none,
                                     counterText: '',
@@ -78,14 +79,14 @@ class _SenhaState extends State<Senha> {
                                   ),
                                 ),
                               ),
-                              Container(width: 50,height: 50,decoration: BoxDecoration(border:Border.all(color:Colors.black87),color: Colors.white60),
+                              Container(width: 40.sp,height: 40.sp,decoration: BoxDecoration(border:Border.all(color:Colors.black87),color: Colors.white60),
                                 child: TextField(
                                   maxLength: 1,
                                   autofocus: true,
                                   textInputAction: TextInputAction.next,
                                   keyboardType: TextInputType.numberWithOptions(),
                                   textAlign: TextAlign.center,
-                                  style: TextStyle(fontSize: 20),
+                                  style: TextStyle(fontSize: 20.sp),
                                   decoration: InputDecoration(
                                     border: InputBorder.none,
                                     counterText: '',
@@ -93,14 +94,14 @@ class _SenhaState extends State<Senha> {
                                   ),
                                 ),
                               ),
-                              Container(width: 50,height: 50,decoration: BoxDecoration(border:Border.all(color:Colors.black87),color: Colors.white60),
+                              Container(width: 40.sp,height: 40.sp,decoration: BoxDecoration(border:Border.all(color:Colors.black87),color: Colors.white60),
                                 child: TextFormField(
                                   maxLength: 1,
                                   autofocus: true,
                                   textInputAction: TextInputAction.send,
                                   keyboardType: TextInputType.numberWithOptions(),
                                   textAlign: TextAlign.center,
-                                  style: TextStyle(fontSize: 20),
+                                  style: TextStyle(fontSize: 20.sp),
                                   decoration: InputDecoration(
                                     border: InputBorder.none,
                                     counterText: '',
@@ -120,10 +121,10 @@ class _SenhaState extends State<Senha> {
                   children: [
 
                     Padding(
-                      padding: const EdgeInsets.only(bottom:28.0),
+                      padding: EdgeInsets.only(bottom:28.0.sp),
                       child: Container(
-                        width: 300,
-                        height: 100,
+                        width: 250.sp,
+                        height:80.sp,
                         color: Colors.deepPurple,
                         child: InkWell(
                           onTap: (){
@@ -133,13 +134,14 @@ class _SenhaState extends State<Senha> {
                           },
                           child: Card(
                             color: Colors.indigo,
-                            child: Center(
+                            child: Padding(
+                              padding: EdgeInsets.only(top:20.sp),
                               child: Container(
-                                width: 180,
-                                height: 25,
+                                width: 180.sp,
+                                height:100.sp,
                                 child:Column(
                                   children: [
-                                    Center(child: Text('Confirmar',style: TextStyle(fontSize: 20,color: Colors.white),)),
+                                    Text('Confirmar',style: TextStyle(fontSize: 18.sp,color: Colors.white),),
                                   ],
                                 ),
                               ),

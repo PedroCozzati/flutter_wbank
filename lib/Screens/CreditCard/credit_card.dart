@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_application/Screens/Pix/ListTransferMain.dart';
 import 'package:flutter_application/Screens/Pix/my_pix.dart';
 import 'package:flutter_application/Screens/home/homePage.dart';
+import 'package:sizer/sizer.dart';
 
 class CreditCard extends StatefulWidget {
   const CreditCard({Key? key}) : super(key: key);
@@ -81,34 +82,34 @@ class _CreditCardState extends State<CreditCard> {
         children: [
           Container(
               color: Colors.deepPurpleAccent,
-              padding: EdgeInsets.only(top: 20),
-              height: 80,
-              width: 420,
+              padding: EdgeInsets.only(top: 10.sp),
+              height: 40.sp,
+              width: 100.w,
               child: Row(
                   mainAxisAlignment: MainAxisAlignment.start,
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
-                    IconButton(icon: Icon(Icons.arrow_back_outlined), onPressed:(){  Navigator.push(context, MaterialPageRoute(builder: (context){
+                    IconButton(icon: Icon(Icons.arrow_back_outlined,size: 15.sp,), onPressed:(){  Navigator.push(context, MaterialPageRoute(builder: (context){
                       return MyHomePage();
                     }));}),
-                    Text('      Cartão de crédito virtual  ',style: TextStyle(color: Colors.white,fontWeight: FontWeight.bold,fontSize: 18),)
+                    Text('      Cartão de crédito virtual  ',style: TextStyle(color: Colors.white,fontWeight: FontWeight.bold,fontSize: 14.sp),)
                   ],
           ),
           ),
           Container(
-              width: 430,
-              height: 590,
+              width: 300.sp,
+              height: 400.sp,
               decoration: BoxDecoration(gradient: LinearGradient(colors: [Colors.purple.shade100,Colors.indigo.shade100])),
               child: Column (
-                mainAxisAlignment: MainAxisAlignment.end,
+                mainAxisAlignment: MainAxisAlignment.start,
                 children: [
                   Row(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Container(
-                            width: 400,
-                            height: 300,
+                            width: 300.sp,
+                            height: 250.sp,
                             decoration: BoxDecoration(gradient:  LinearGradient(colors:  [Colors.purple.shade300,Colors.indigo.shade300]),),
                             child:  Column(
                               mainAxisAlignment: MainAxisAlignment.center,
@@ -116,41 +117,41 @@ class _CreditCardState extends State<CreditCard> {
                                 Container(
                                   decoration: BoxDecoration(borderRadius: BorderRadius.circular(10),gradient: corCartao,
                                   ),
-                                  height: 190,
-                                  width: 350,
+                                  height: 120.sp,
+                                  width: 200.sp,
                                   child: Container(
-                                    width: 350,
-                                    height: 190,
+                                    width: 190,
+                                    height: 110,
                                     child:
                                     Padding(
-                                      padding: const EdgeInsets.only(top:20.0,left: 15),
+                                      padding:  EdgeInsets.only(top:10.sp,left:10.sp),
                                       child: Column(
                                         crossAxisAlignment: CrossAxisAlignment.start,
                                         children: [
                                           Row(children: [
-                                            Icon(Icons.calculate_sharp,color: Colors.white,),
-                                            Container(width: 240,),
-                                            Icon(Icons.circle,color: Colors.red,),
-                                            Container(width: 0,),
-                                            Icon(Icons.circle,color: Colors.yellow.shade600,),
+                                            Icon(Icons.calculate_sharp,color: Colors.white,size: 15.sp,),
+                                            Container(width: 120.sp,),
+                                            Icon(Icons.circle,color: Colors.red,size: 15.sp,),
+                                            Container(width: 0.sp,),
+                                            Icon(Icons.circle,color: Colors.yellow.shade600,size: 15.sp,),
                                           ],
                                           ),
-                                          Container(height:70),
+                                          Container(height:40.sp),
                                           Row(
                                             children: [
                                               RichText(
                                                   text: TextSpan(children: [
-                                                    TextSpan(text:' '+nome+"\n\n",style: TextStyle(fontSize: 18,color: Colors.white)),
-                                                    TextSpan(text:' '+numero,style: TextStyle(fontSize: 20,color: Colors.white,fontWeight: FontWeight.bold)),
+                                                    TextSpan(text:' '+nome+"\n\n",style: TextStyle(fontSize: 10.sp,color: Colors.white)),
+                                                    TextSpan(text:' '+numero,style: TextStyle(fontSize: 10.sp,color: Colors.white,fontWeight: FontWeight.bold)),
 
                                                   ])),
                                               Padding(
-                                                padding: const EdgeInsets.only(left:30.0,top: 10),
-                                                child: IconButton(icon: Icon(Icons.copy), onPressed: (){}),
+                                                padding:  EdgeInsets.only(left:15.sp,top: 10.sp),
+                                                child: IconButton(icon: Icon(Icons.copy,size: 15.sp,), onPressed: (){}),
                                               ),
                                               Padding(
-                                                padding: const EdgeInsets.only(top: 10),
-                                                child: IconButton(icon: Icon(Icons.remove_moderator), onPressed: (){
+                                                padding:EdgeInsets.only(top: 10.sp),
+                                                child: IconButton(icon: Icon(Icons.remove_moderator,size: 15.sp,), onPressed: (){
                                                   setState(() {
                                                     corCartao = LinearGradient(colors: [Colors.blueGrey,Colors.black]);
                                                   });
@@ -178,8 +179,8 @@ class _CreditCardState extends State<CreditCard> {
                     children: [
 
                       Container(
-                        width: 205,
-                        height: 200,
+                        width:150.sp,
+                        height: 150.sp,
                         child: InkWell(
                           onTap: () {
                             if(numero == ''){
@@ -199,11 +200,11 @@ class _CreditCardState extends State<CreditCard> {
                             color: Colors.white,
                             child: Center(
                               child: Container(
-                                width: 180,
-                                height: 75,
+                                width:150.sp,
+                                height: 150.sp,
                                 child:Column(
                                   children: [
-                                    Text('Apagar Cartão',style: TextStyle(fontSize: 20),),
+                                    Padding(padding:EdgeInsets.only(top:50.sp),child: Text('Apagar Cartão',style: TextStyle(fontSize: 15.sp),)),
                                     Center(child: Icon(Icons.highlight_remove,size: 50,color: Colors.blueGrey,),)
                                   ],
                                 ),
@@ -213,8 +214,8 @@ class _CreditCardState extends State<CreditCard> {
                         ),
                   ),
                       Container(
-                        width: 205,
-                        height: 200,
+                        width:150.sp,
+                        height: 150.sp,
                         child: InkWell(
                           onTap: (){
                             if(numero != ''){
@@ -240,11 +241,11 @@ class _CreditCardState extends State<CreditCard> {
                             color: Colors.white,
                             child: Center(
                               child: Container(
-                                width: 180,
-                                height: 75,
+                                width:150.sp,
+                                height: 150.sp,
                                 child:Column(
                                   children: [
-                                    Text('Criar novo cartão',style: TextStyle(fontSize: 20),),
+                                    Padding(padding:EdgeInsets.only(top:50.sp),child: Text('Criar novo cartão',style: TextStyle(fontSize: 15.sp),)),
                                     Center(child: Icon(Icons.credit_card_rounded,size: 50,color: Colors.blueGrey,),)
                                   ],
                                 ),
@@ -254,12 +255,6 @@ class _CreditCardState extends State<CreditCard> {
                         ),
                       ),
                     ],
-                  ),
-                  Container(
-                    height: 70,
-                    width: 400,
-                    decoration: BoxDecoration(gradient: LinearGradient(colors: [Colors.purple.shade300,Colors.indigo.shade300]),
-                    ),
                   ),
                 ],
               )
