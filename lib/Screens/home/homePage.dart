@@ -23,8 +23,8 @@ class _MyHomePageState extends State<MyHomePage> {
       appBar: AppBarWidget(
       ),
       body: Stack(children: [ Container(
-        height: 500.sp,
-        width: 500.sp,
+        height:double.infinity,
+        width: double.infinity,
         decoration: BoxDecoration(gradient: LinearGradient(colors: [Colors.purple.shade100,Colors.indigo.shade100])),
       ),ListHome()],),
 

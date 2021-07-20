@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_application/Screens/Pix/ListTransferMain.dart';
+import 'package:flutter_application/Screens/Pix/historico.dart';
 
 import 'my_pix.dart';
 import 'package:sizer/sizer.dart';
@@ -41,7 +42,7 @@ class PixScreen extends StatelessWidget {
 
                 Container(
                   width:150.sp,
-                  height: 150.sp,
+                  height: 140.sp,
                   child: InkWell(
                     onTap: (){
                       Navigator.push(context, MaterialPageRoute(builder: (context){
@@ -53,11 +54,11 @@ class PixScreen extends StatelessWidget {
                       child: Center(
                         child: Container(
                           width: 90.sp,
-                          height: 75.sp,
+                          height: 50.sp,
                           child:Column(
                             children: [
-                              Text('Transferir',style: TextStyle(fontSize: 20.sp),),
-                              Center(child: Icon(Icons.attach_money,size: 30.sp,color: Colors.blueGrey,),)
+                              Text('Transferir',style: TextStyle(fontSize: 18.sp),),
+                              Center(child: Icon(Icons.attach_money,size: 25.sp,color: Colors.blueGrey,),)
                           ],
                           ),
                         ),
@@ -67,7 +68,7 @@ class PixScreen extends StatelessWidget {
                 ),
                 Container(
                   width:150.sp,
-                  height: 150.sp,
+                  height: 140.sp,
                   child: InkWell(
                     onTap: (){
                       Navigator.push(context, MaterialPageRoute(builder: (context){
@@ -79,11 +80,11 @@ class PixScreen extends StatelessWidget {
                       child: Center(
                         child: Container(
                           width: 120.sp,
-                          height: 75.sp,
+                          height: 50.sp,
                           child:Column(
                             children: [
-                              Text('Sua chave Pix',style: TextStyle(fontSize: 20.sp),),
-                              Center(child: Icon(Icons.vpn_key_rounded,size: 30.sp,color: Colors.blueGrey,),)
+                              Text('Sua chave Pix',style: TextStyle(fontSize: 18.sp),),
+                              Center(child: Icon(Icons.vpn_key_rounded,size: 25.sp,color: Colors.blueGrey,),)
                             ],
                           ),
                         ),
@@ -94,10 +95,41 @@ class PixScreen extends StatelessWidget {
 
               ],
             ),
+            Column(
+              mainAxisAlignment: MainAxisAlignment.end,
+              children: [
+                InkWell(
+                  onTap: (){
+                    Navigator.push(context, MaterialPageRoute(builder: (context){
+                    return HistoricoPage();
+                    }));
+                  },
+                  child: Card(
+                    color: Colors.white,
+                    child: Center(
+                      child: Container(
+                        width: 250.sp,
+                        height: 40.sp,
+                        child:Column(
+                          children: [
+                            Text('Histórico de Transferências',style: TextStyle(fontSize: 13.sp),),
+                            Center(child: Icon(Icons.history,size: 18.sp,color: Colors.blueGrey,),)
+                          ],
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+              ],
+            ),
 
         ],
         )
       ),
     );
+  }
+
+   _ShowTransList(BuildContext context) {
+    Navigator.of(context).push(MaterialPageRoute(builder: (context)=>HistoricoPage()));
   }
 }

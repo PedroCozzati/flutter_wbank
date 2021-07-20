@@ -3,15 +3,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_application/Screens/CreditCard/credit_card.dart';
 import 'package:sizer/sizer.dart';
 
-class Senha extends StatefulWidget {
-  const Senha({Key? key}) : super(key: key);
+class Senha extends StatelessWidget {
+  const Senha(this.page);
+  final Widget page;
 
-  @override
-  _SenhaState createState() => _SenhaState();
-}
 
-class _SenhaState extends State<Senha> {
-  @override
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -129,7 +125,7 @@ class _SenhaState extends State<Senha> {
                         child: InkWell(
                           onTap: (){
                           Navigator.push(context, MaterialPageRoute(builder: (context) {
-                            return CreditCard();
+                            return page;
                           }));
                           },
                           child: Card(

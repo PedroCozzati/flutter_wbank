@@ -5,6 +5,8 @@ import 'package:flutter_application/Screens/Guardar/guardar_dinheiro.dart';
 import 'package:flutter_application/Screens/Pix/pix_screen.dart';
 import 'package:flutter_application/Screens/SenhaScreen/senha.dart';
 import 'package:flutter_application/Screens/splash/splashScreen.dart';
+import 'package:flutter_application/widgets/home_card.dart';
+import 'package:flutter_application/widgets/home_item.dart';
 import 'package:sizer/sizer.dart';
 
 class ListHome extends StatefulWidget {
@@ -60,81 +62,10 @@ class _ListHomeState extends State<ListHome> {
                                               children:[
                                              // Navigator.push(context, MaterialPageRoute(builder: (context){
                                              //  return GuardarDinheiro();
-                                                Padding(
-                                                    padding:  EdgeInsets.only(left:15.sp),
-                                                    child: InkWell(
-                                                      onTap: (){
-                                                        Navigator.push(context, MaterialPageRoute(builder: (context){
-                                                          return GuardarDinheiro();
-                                                          })
-                                                        );
-                                                      },
-                                                      child: Container(
-                                                        width:180.sp,
-                                                        height: 70.sp,
-                                                        child: Card(
-                                                          child: ListTile(
-                                                            title: Row(
-                                                              children: [
-                                                                Padding(
-                                                                  padding: EdgeInsets.only(top:5.sp),
-                                                                  child: Icon(Icons.credit_card_rounded,size: 15.sp,),
-                                                                ),
-                                                                Padding(
-                                                                  padding: EdgeInsets.only(top:5.sp),
-                                                                  child: Text('Dinheiro guardado',style: TextStyle(fontSize: 14.sp),),
-                                                                ),
-                                                              ],
-                                                            ),
-                                                            subtitle:Column(
-                                                              crossAxisAlignment: CrossAxisAlignment.start,
-                                                              children: [
-                                                                Text('BRL 20.00',style: TextStyle(fontSize: 17.sp,color: Colors.indigoAccent),),
-                                                              ],
-                                                            ),
-                                                          ),
-                                                        ),
-                                                      ),
-                                                    )
-                                                ),
-
-
-                                                Padding(
-                                                  padding:  EdgeInsets.only(left:15.sp),
-                                                  child: Container(
-                                                    width:180.sp,
-                                                    height: 90.sp,
-                                                    child: Card(
-                                                        child: ListTile(
-                                                          title: Row(
-                                                            children: [
-                                                            Padding(
-                                                              padding: EdgeInsets.only(top:5.sp),
-                                                              child: Icon(Icons.credit_card_rounded,size: 15.sp,),
-                                                            ),
-                                                            Padding(
-                                                              padding: EdgeInsets.only(top:5.sp),
-                                                              child: Text('Cartão de Crédito',style: TextStyle(fontSize: 14.sp),),
-                                                            ),
-                                                          ],
-                                                          ),
-                                                          subtitle:Column(
-                                                            crossAxisAlignment: CrossAxisAlignment.start,
-                                                                      children: [
-                                                                        Text('Fatura Atual',style: TextStyle(fontSize: 12.sp),),
-                                                                        Text('BRL 200.00',style: TextStyle(fontSize: 17.sp,color: Colors.indigoAccent),),
-                                                                        Text('Limite disponível: BRL 20.00',style: TextStyle(fontSize: 9.sp),),
-                                                                      ],
-                                                                ),
-                                                                ),
-                                                          ),
-                                                        )
-                                                    ),
-
-
+                                               HomeItem('Dinheiro Guardado', Icons.money, 'BRL 120.00', '', Icons.navigate_next_rounded, GuardarDinheiro(),'',''),
+                                               HomeItem('Cartão de crédito', Icons.credit_card,'BRL 200.00', 'Fatura Atual',Icons.navigate_next_rounded,Senha(CreditCard()),'Limite Disponivel: ','20.00')
                                           ],
                                             ),
-
                                           ],
                                           )
                                         ),
@@ -163,13 +94,9 @@ class _ListHomeState extends State<ListHome> {
                                     )
                                   ],
                                 )
-
                             ),
                     ),
                         ),
-
-
-
                 ],
               ),
             ],
@@ -177,170 +104,27 @@ class _ListHomeState extends State<ListHome> {
           SizedBox(
             child: Container(
               width: 270.sp,
-              height: 80.sp,
+              height: 70.sp,
               child: ListView(
                 scrollDirection: Axis.horizontal ,
                 children: <Widget>[
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    crossAxisAlignment: CrossAxisAlignment.end,
-                    children: [
-                      Container(
-                        width:80.sp,
-                        height: 70.sp,
-                        child:Column(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            Container(
-                              height: 70.sp,
-                              width: 80.sp,
-                              child:
-                              InkWell(
-                                onTap: (){
-                                  print('teste');
-                                  Navigator.push(context, MaterialPageRoute(builder: (context){
-                                    return PixScreen();
-                                  }));
-                                },
-                                child: Container(
-                                  width: 80.sp,
-                                  height: 70.sp,
-                                  decoration: BoxDecoration(borderRadius: BorderRadius.circular(10), color: cor_cartao,),
-                                  child: Center(
-                                    child: Container(
-                                      padding:const EdgeInsets.all(8.0),
-                                      child: Text('Pix',style: TextStyle(color: Colors.white,fontSize: 12.sp),),
-
-                                    ),
-                                  ),
-                                ),
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                      Container(
-                        width:100.sp,
-                        height: 70.sp,
-                        child:Column(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            Container(
-                              width:80.sp,
-                              height: 70.sp,
-                              child:
-                              InkWell(
-                                onTap: (){
-                                  print('teste');
-                                  Navigator.push(context, MaterialPageRoute(builder: (context){
-                                    return Senha();
-                                  }));
-                                },
-                                child: Container(
-                                  width:80.sp,
-                                  height: 70.sp,
-                                  decoration: BoxDecoration(
-                                      color: cor_cartao,
-                                      borderRadius: BorderRadius.circular(10)
-                                  ),
-                                  child:Center(
-                                    child: Container(
-                                      padding:const EdgeInsets.all(20.0),
-                                      child: Text('Cartão de crédito',style: TextStyle(color: Colors.white,fontSize: 10.sp),),
-                                    ),
-                                  ),
-                                ),
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                      Container(
-                        width:80.sp,
-                        height: 70.sp,
-                        child:Column(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            Container(
-                              width:80.sp,
-                              height: 70.sp,
-                              child:
-                              Container(
-                                width:80.sp,
-                                height: 70.sp,
-                                decoration: BoxDecoration(
-                                    color: cor_cartao,
-                                    borderRadius: BorderRadius.circular(10)
-                                ),
-                                child: Center(
-                                  child: Container(
-                                    padding:const EdgeInsets.all(8.0),
-                                    child: Text('Pix',style: TextStyle(color: Colors.white,fontSize: 12.sp),),
-                                  ),
-                                ),
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                      Container(
-                        width:100.sp,
-                        height: 70.sp,
-                        child:Column(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            Container(
-                              width:80.sp,
-                              height: 70.sp,
-                              child:
-                              Container(
-                                width:80.sp,
-                                height: 70.sp,
-                                decoration: BoxDecoration(
-                                    color: cor_cartao,
-                                    borderRadius: BorderRadius.circular(10)
-                                ),
-                                child: Center(
-                                  child: Container(
-                                    padding:const EdgeInsets.all(8.0),
-                                    child: Text('Pix',style: TextStyle(color: Colors.white,fontSize: 12.sp),),
-                                  ),
-                                ),
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                      Container(
-                        width:80.sp,
-                        height: 70.sp,
-                        child:Column(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            Container(
-                              width:80.sp,
-                              height: 70.sp,
-                              child:
-                              Container(
-                                width:80.sp,
-                                height: 70.sp,
-                                decoration: BoxDecoration(
-                                    color: cor_cartao,
-                                    borderRadius: BorderRadius.circular(10)
-                                ),
-                                child: Center(
-                                  child: Container(
-                                    padding:const EdgeInsets.all(8.0),
-                                    child: Text('Pix',style: TextStyle(color: Colors.white,fontSize: 12.sp),),
-                                  ),
-                                ),
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-
-                    ],
+                  Flexible(
+                    flex: 1,
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      crossAxisAlignment: CrossAxisAlignment.end,
+                      children: [
+                        HomeCard('Pix', PixScreen(),Icons.api),
+                        Container(width: 10,),
+                        HomeCard('Pagar', Senha(CreditCard()),Icons.view_sidebar_rounded),
+                        Container(width: 10,),
+                        HomeCard('Transferir', Senha(PixScreen()),Icons.send_outlined),
+                        Container(width: 10,),
+                        HomeCard('Depositar', Senha(PixScreen()),Icons.account_balance_wallet),
+                        Container(width: 10,),
+                        HomeCard('Empréstimo', Senha(PixScreen()),Icons.account_balance),
+                      ],
+                    ),
                   ),
                 ],
               ),

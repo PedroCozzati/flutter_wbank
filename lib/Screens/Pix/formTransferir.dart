@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application/Screens/PageForm/enumCheckBox.dart';
+
 import 'package:flutter_application/components/contacts.dart';
-import 'package:flutter_application/database/app_database.dart';
+
 import 'package:flutter_application/database/dao/contact_dao.dart';
 
 class FormTransferir extends StatefulWidget {

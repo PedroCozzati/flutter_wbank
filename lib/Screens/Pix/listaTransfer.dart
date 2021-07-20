@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application/Screens/PageForm/formTransfer.dart';
+import 'package:flutter_application/Screens/TransferForm/formTransfer.dart';
 import 'package:flutter_application/components/contacts.dart';
 import 'package:flutter_application/database/dao/contact_dao.dart';
 
@@ -31,7 +31,7 @@ class PageAluno extends StatefulWidget {
         ),
             onPressed: (){
             Navigator.push(context, MaterialPageRoute(builder: (context){
-              return FormAluno();
+              return FormContatos();
             })).then(
               (produtosAdd) => _atualizar(produtosAdd)
             );

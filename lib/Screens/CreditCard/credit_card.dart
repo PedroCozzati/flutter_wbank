@@ -98,7 +98,7 @@ class _CreditCardState extends State<CreditCard> {
           ),
           Container(
               width: 300.sp,
-              height: 400.sp,
+              height: 400 .sp,
               decoration: BoxDecoration(gradient: LinearGradient(colors: [Colors.purple.shade100,Colors.indigo.shade100])),
               child: Column (
                 mainAxisAlignment: MainAxisAlignment.start,

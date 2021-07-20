@@ -20,7 +20,7 @@ Future<Database> createDatabase() async {
       );
     },
     version: 1,
-      //onDowngrade: onDatabaseDowngradeDelete,
+      onDowngrade: onDatabaseDowngradeDelete,
   );
 }
 

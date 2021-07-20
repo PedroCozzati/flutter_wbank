@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application/Screens/PageForm/formTransfer.dart';
+
 import 'package:flutter_application/Screens/Pix/formTransferir.dart';
+import 'package:flutter_application/Screens/TransferForm/formTransfer.dart';
 import 'package:flutter_application/components/contacts.dart';
 import 'package:flutter_application/database/app_database.dart';
 import 'package:flutter_application/database/dao/contact_dao.dart';
@@ -31,7 +32,7 @@ class ListTransfer extends StatefulWidget {
       onTap: (){
         Navigator.of(context).push(
           MaterialPageRoute(
-              builder: (context) => FormAluno()
+              builder: (context) => FormContatos()
           ),
         ).then((value) => setState((){}));
       },

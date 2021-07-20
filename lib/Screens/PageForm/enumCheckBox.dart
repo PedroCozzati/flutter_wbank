@@ -1,4 +1,0 @@
-enum Escolha {
-  EscolhaAluno,
-  EscolhaProfessor,
-}
