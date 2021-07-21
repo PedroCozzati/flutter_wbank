@@ -33,15 +33,15 @@ class HomeItem extends StatelessWidget {
                   children: [
                     Padding(
                       padding: EdgeInsets.only(top:5.sp),
-                      child: Icon(icon,size: 15.sp,),
+                      child: Icon(icon,size: 14.sp,),
                     ),
                     Padding(
                       padding: EdgeInsets.only(top:5.sp),
-                      child: Text(title,style: TextStyle(fontSize: 13.sp),),
+                      child: Text(title,style: TextStyle(fontSize: 11.sp),),
                     ),
                     Padding(
                       padding: EdgeInsets.only(top:5.sp),
-                      child: Icon(next,size: 14.sp,),
+                      child: Icon(next,size: 15.sp,),
                     ),
                   ],
                 ),
@@ -49,11 +49,11 @@ class HomeItem extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(label,style: TextStyle(fontSize: 10.sp,color: Colors.grey),),
-                    Text(sub,style: TextStyle(fontSize: 14.sp,color: Colors.indigoAccent),),
+                    Text(sub,style: TextStyle(fontSize: 12.sp,color: Colors.indigoAccent),),
                     Row(
                       children: [
-                        Text(text,style: TextStyle(fontSize: 8.sp,color: Colors.grey),),
-                        Text(lim,style: TextStyle(fontSize: 8.sp,color: Colors.redAccent),),
+                        Text(text,style: TextStyle(fontSize: 9.sp,color: Colors.grey),),
+                        Text(lim,style: TextStyle(fontSize: 9.sp,color: Colors.redAccent),),
                       ],
                     )
                   ],

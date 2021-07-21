@@ -2,6 +2,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_application/Screens/Pix/ListTransferMain.dart';
 import 'package:flutter_application/Screens/Pix/historico.dart';
+import 'package:flutter_application/widgets/rec_card_button.dart';
+import 'package:flutter_application/widgets/square_card_button.dart';
 
 import 'my_pix.dart';
 import 'package:sizer/sizer.dart';
@@ -15,116 +17,45 @@ class PixScreen extends StatelessWidget {
       appBar: AppBar(
         title: Text('Pix'),
       ) ,
-      body: Container(
-        width: 430.sp,
-        height: 700.sp,
-        decoration: BoxDecoration(gradient: LinearGradient(colors: [Colors.purple.shade100,Colors.indigo.shade100]),
-      ),
-        child: Column (
-          mainAxisAlignment: MainAxisAlignment.start,
-          children: [
-            Row(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Container(
-                    width: 300.sp,
-                    height: 250.sp,
-                    decoration: BoxDecoration(gradient: LinearGradient(colors: [Colors.purple.shade400,Colors.indigo.shade400],),
-                    ),
-                    child:  Image(image:NetworkImage('https://th.bing.com/th/id/R.32182b40e44b54fde1c0bd27a98ef35b?rik=MnBXNJU27xMT6Q&pid=ImgRaw'),fit: BoxFit.contain,height: 50.sp,width: 50.sp,)),
-                ]
+      body: Column(
+        children: [
+          Expanded(
+            flex: 1,
+            child: Container(
+              width: 430.sp,
+              height: 700.sp,
+              decoration: BoxDecoration(gradient: LinearGradient(colors: [Colors.purple.shade100,Colors.indigo.shade100]),
             ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.start,
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-
-                Container(
-                  width:150.sp,
-                  height: 140.sp,
-                  child: InkWell(
-                    onTap: (){
-                      Navigator.push(context, MaterialPageRoute(builder: (context){
-                        return ListTransfer();
-                      }));
-                    },
-                    child: Card(
-                      color: Colors.white,
-                      child: Center(
-                        child: Container(
-                          width: 90.sp,
-                          height: 50.sp,
-                          child:Column(
-                            children: [
-                              Text('Transferir',style: TextStyle(fontSize: 18.sp),),
-                              Center(child: Icon(Icons.attach_money,size: 25.sp,color: Colors.blueGrey,),)
-                          ],
-                          ),
-                        ),
+              child: Container(
+                      width: 300.sp,
+                      height: double.infinity,
+                      decoration: BoxDecoration(gradient: LinearGradient(colors: [Colors.purple.shade400,Colors.indigo.shade400],),
                       ),
-                    ),
+                      child:  Image(image:NetworkImage('https://th.bing.com/th/id/R.32182b40e44b54fde1c0bd27a98ef35b?rik=MnBXNJU27xMT6Q&pid=ImgRaw'),fit: BoxFit.contain,height: 50.sp,width: 50.sp,)),
                   ),
-                ),
-                Container(
-                  width:150.sp,
-                  height: 140.sp,
-                  child: InkWell(
-                    onTap: (){
-                      Navigator.push(context, MaterialPageRoute(builder: (context){
-                        return MyPix();
-                      }));
-                    },
-                    child: Card(
-                      color: Colors.white,
-                      child: Center(
-                        child: Container(
-                          width: 120.sp,
-                          height: 50.sp,
-                          child:Column(
-                            children: [
-                              Text('Sua chave Pix',style: TextStyle(fontSize: 18.sp),),
-                              Center(child: Icon(Icons.vpn_key_rounded,size: 25.sp,color: Colors.blueGrey,),)
-                            ],
-                          ),
-                        ),
-                      ),
-                    ),
-                  ),
-                ),
-
-              ],
             ),
-            Column(
-              mainAxisAlignment: MainAxisAlignment.end,
-              children: [
-                InkWell(
-                  onTap: (){
-                    Navigator.push(context, MaterialPageRoute(builder: (context){
-                    return HistoricoPage();
-                    }));
-                  },
-                  child: Card(
-                    color: Colors.white,
-                    child: Center(
-                      child: Container(
-                        width: 250.sp,
-                        height: 40.sp,
-                        child:Column(
-                          children: [
-                            Text('Histórico de Transferências',style: TextStyle(fontSize: 13.sp),),
-                            Center(child: Icon(Icons.history,size: 18.sp,color: Colors.blueGrey,),)
-                          ],
-                        ),
-                      ),
-                    ),
-                  ),
-                ),
-              ],
-            ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Expanded(
+                flex: 1,
+                child: SquareCard(ListTransfer(),'Transferir', Icons.attach_money_outlined),
+              ),
+              Expanded(
+                flex: 1,
+                child: SquareCard(MyPix(),'Sua Chave', Icons.vpn_key_rounded)
+              ),
 
+            ],
+          ),
+          Column(
+            mainAxisAlignment: MainAxisAlignment.end,
+            children: [
+             RecCard('Histórico de Transferências', Icons.history, HistoricoPage())
+            ],
+          ),
         ],
-        )
       ),
     );
   }

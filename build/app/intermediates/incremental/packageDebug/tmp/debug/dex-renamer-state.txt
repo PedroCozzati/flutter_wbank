@@ -1,4 +1,4 @@
-#Tue Jul 20 11:58:02 BRT 2021
+#Wed Jul 21 15:42:09 BRT 2021
 base.0=C\:\\Users\\aprendiz.pcamillo\\AndroidStudioProjects\\flutter_wbank\\build\\app\\intermediates\\dex\\debug\\mergeDexDebug\\classes.dex
 path.0=classes.dex
 renamed.0=classes.dex

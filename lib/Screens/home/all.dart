@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application/Screens/home/appbar.dart';
+import 'package:flutter_application/widgets/appbar.dart';
 import 'package:flutter_application/Screens/home/homePage.dart';
 import 'package:sizer/sizer.dart';
 

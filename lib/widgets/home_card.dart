@@ -36,7 +36,7 @@ class HomeCard extends StatelessWidget {
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: [
-                      Icon(icon,color: Colors.white,),
+                      Icon(icon,color: Colors.white,size: 16.sp,),
                       Container(
                         padding:const EdgeInsets.all(8.0),
                         child: Text(label,style: TextStyle(color: Colors.white,fontSize: 12.sp),),
