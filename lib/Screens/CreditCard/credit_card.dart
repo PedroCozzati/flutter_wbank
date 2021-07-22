@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_application/Screens/Pix/ListTransferMain.dart';
 import 'package:flutter_application/Screens/Pix/my_pix.dart';
 import 'package:flutter_application/Screens/home/homePage.dart';
+import 'package:flutter_application/widgets/square_card_button.dart';
 import 'package:sizer/sizer.dart';
 
 class CreditCard extends StatefulWidget {
@@ -83,7 +84,7 @@ class _CreditCardState extends State<CreditCard> {
           Container(
               color: Colors.deepPurpleAccent,
               padding: EdgeInsets.only(top: 10.sp),
-              height: 40.sp,
+              height: 55.sp,
               width: 100.w,
               child: Row(
                   mainAxisAlignment: MainAxisAlignment.start,
@@ -196,21 +197,7 @@ class _CreditCardState extends State<CreditCard> {
                                     .then((value) => _showDialog()),);
                             }
                           },
-                          child: Card(
-                            color: Colors.white,
-                            child: Center(
-                              child: Container(
-                                width:150.sp,
-                                height: 150.sp,
-                                child:Column(
-                                  children: [
-                                    Padding(padding:EdgeInsets.only(top:50.sp),child: Text('Apagar Cartão',style: TextStyle(fontSize: 15.sp),)),
-                                    Center(child: Icon(Icons.highlight_remove,size: 50,color: Colors.blueGrey,),)
-                                  ],
-                                ),
-                              ),
-                            ),
-                          ),
+                          child: SquareCard(title:'Apagar Cartão',icon:Icons.highlight_remove_rounded)
                         ),
                   ),
                       Container(
@@ -237,21 +224,7 @@ class _CreditCardState extends State<CreditCard> {
                               });
                             }
                           },
-                          child: Card(
-                            color: Colors.white,
-                            child: Center(
-                              child: Container(
-                                width:150.sp,
-                                height: 150.sp,
-                                child:Column(
-                                  children: [
-                                    Padding(padding:EdgeInsets.only(top:50.sp),child: Text('Criar novo cartão',style: TextStyle(fontSize: 15.sp),)),
-                                    Center(child: Icon(Icons.credit_card_rounded,size: 50,color: Colors.blueGrey,),)
-                                  ],
-                                ),
-                              ),
-                            ),
-                          ),
+                          child: SquareCard(title:'Criar novo cartão',icon:Icons.credit_card)
                         ),
                       ),
                     ],

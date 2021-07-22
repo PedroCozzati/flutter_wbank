@@ -40,11 +40,11 @@ class PixScreen extends StatelessWidget {
             children: [
               Expanded(
                 flex: 1,
-                child: SquareCard(ListTransfer(),'Transferir', Icons.attach_money_outlined),
+                child: SquareCard(page:ListTransfer(),title:'Transferir',icon: Icons.attach_money_outlined),
               ),
               Expanded(
                 flex: 1,
-                child: SquareCard(MyPix(),'Sua Chave', Icons.vpn_key_rounded)
+                child: SquareCard(page:MyPix(),title:'Sua Chave', icon:Icons.vpn_key_rounded)
               ),
 
             ],
