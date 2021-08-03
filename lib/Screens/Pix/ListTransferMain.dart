@@ -24,7 +24,7 @@ class ListTransfer extends StatefulWidget {
 
       return Scaffold(
           appBar: AppBar(
-          title: Text("Transferências"),
+          title: Text("Contatos"),
       ),
       body: Column(children: [
       Card(
@@ -87,7 +87,7 @@ class ContactItem extends StatelessWidget {
       child: ListTile(
         onTap: (){
       Navigator.push(context, MaterialPageRoute(builder: (context){
-        return FormTransferir('');
+        return FormTransferir(contact.name,contact.accountNumber);
           }));
       },
         title: Row(
@@ -102,7 +102,7 @@ class ContactItem extends StatelessWidget {
           ],
         ),
         subtitle: Text(
-          contact.conta.toString(),
+          contact.accountNumber.toString(),
           style: TextStyle(
             fontSize: 14
           ),

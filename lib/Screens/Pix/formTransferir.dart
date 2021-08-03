@@ -1,14 +1,20 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application/Screens/Pix/historico.dart';
+import 'package:flutter_application/Screens/SenhaScreen/senha.dart';
 
 import 'package:flutter_application/components/contacts.dart';
+import 'package:flutter_application/components/transferencias.dart';
 
 import 'package:flutter_application/database/dao/contact_dao.dart';
+import 'package:flutter_application/http/web_client.dart';
 
 class FormTransferir extends StatefulWidget {
-  const FormTransferir(this.nomeP);
+  const FormTransferir(this.nomeP, this.conta);
   final String nomeP;
+  final int conta;
 
-  String get teste => nomeP;
+
+
   @override
   FormTransferirState createState() => FormTransferirState(nomeP);
 }
@@ -120,6 +126,8 @@ class FormTransferirState extends State<FormTransferir> {
               child: ElevatedButton(
                 onPressed: () {
                   _showDialog();
+
+
                 },
                 child: Text('Transferir',style: TextStyle(fontSize: 17),)
           ),
@@ -135,7 +143,7 @@ class FormTransferirState extends State<FormTransferir> {
                   Container(height: 5,),
                   RichText(
                     text: TextSpan(children: [
-                        TextSpan(text:'  Nome:',style: TextStyle(fontSize: 20,color: Colors.black)),
+                        TextSpan(text:'  Nome:  ',style: TextStyle(fontSize: 20,color: Colors.black)),
                         WidgetSpan(child:Container(
                           width: 305,
                           height: 30,
@@ -143,7 +151,7 @@ class FormTransferirState extends State<FormTransferir> {
                             mainAxisAlignment: MainAxisAlignment.end,
                             crossAxisAlignment: CrossAxisAlignment.end,
                             children: [
-                              Text(widget.teste,style: TextStyle(fontSize: 20,color: Colors.black,)),
+                              Text( widget.nomeP,style: TextStyle(fontSize: 20,color: Colors.black,)),
                             ],
                           ),
                         )),
@@ -159,7 +167,7 @@ class FormTransferirState extends State<FormTransferir> {
                             mainAxisAlignment: MainAxisAlignment.end,
                             crossAxisAlignment: CrossAxisAlignment.end,
                             children: [
-                              Text('3453494444444444990',style: TextStyle(fontSize: 20,color: Colors.black,)),
+                              Text(widget.conta.toString(),style: TextStyle(fontSize: 20,color: Colors.black,)),
                             ],
                           ),
                         )),
@@ -175,7 +183,7 @@ class FormTransferirState extends State<FormTransferir> {
                             mainAxisAlignment: MainAxisAlignment.end,
                             crossAxisAlignment: CrossAxisAlignment.end,
                             children: [
-                              Text('435645744796',style: TextStyle(fontSize: 20,color: Colors.black,)),
+                              Text('',style: TextStyle(fontSize: 20,color: Colors.black,)),
                             ],
                           ),
                         )),
@@ -191,7 +199,7 @@ class FormTransferirState extends State<FormTransferir> {
                             mainAxisAlignment: MainAxisAlignment.end,
                             crossAxisAlignment: CrossAxisAlignment.end,
                             children: [
-                              Text('235447896',style: TextStyle(fontSize: 20,color: Colors.black,)),
+                              Text('',style: TextStyle(fontSize: 20,color: Colors.black,)),
                             ],
                           ),
                         )),
@@ -230,7 +238,15 @@ class FormTransferirState extends State<FormTransferir> {
         actions: [
           Padding(
             padding: const EdgeInsets.only(right:80.0),
-            child: ElevatedButton(onPressed: (){_criarCadastro(context);Navigator.of(context).pop();Navigator.of(context).pop();}, child: Text('ok')),
+            child: ElevatedButton(onPressed: (){
+              _criarCadastro(context);
+              Navigator.of(context).pop();
+              Navigator.push(context, MaterialPageRoute(builder: (context){
+                return Senha(HistoricoPage());
+              }));
+              //Navigator.push(context, MaterialPageRoute(builder: (context){return HistoricoPage();}));
+            },
+                child: Text('ok')),
           ),
           Padding(
             padding: const EdgeInsets.only(right:45.0),
@@ -244,16 +260,14 @@ class FormTransferirState extends State<FormTransferir> {
     });
   }
   void _criarCadastro(BuildContext context){
-
     final String nome = _controladorNome.text;
     int conta = int.tryParse(_controladorConta.text)!;
     final Contact newContact = Contact(0, nome, conta);
     if (_formKey.currentState!.validate()) {
       ScaffoldMessenger.of(context)
           .showSnackBar(SnackBar(content: Text('Transferência concluída')));
+      save1(Transaction(conta.toDouble(), Contact(0, widget.nomeP, widget.conta))).then((transaction) => print(transaction));
 
     }
   }
-
-
 }

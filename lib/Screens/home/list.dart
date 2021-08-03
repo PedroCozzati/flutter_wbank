@@ -108,9 +108,7 @@ class _ListHomeState extends State<ListHome> {
               child: ListView(
                 scrollDirection: Axis.horizontal ,
                 children: <Widget>[
-                  Flexible(
-                    flex: 1,
-                    child: Row(
+                  Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       crossAxisAlignment: CrossAxisAlignment.end,
                       children: [
@@ -125,7 +123,7 @@ class _ListHomeState extends State<ListHome> {
                         HomeCard('Empréstimo', Senha(PixScreen()),Icons.account_balance),
                       ],
                     ),
-                  ),
+
                 ],
               ),
             ),

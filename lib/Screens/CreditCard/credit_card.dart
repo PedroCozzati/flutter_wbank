@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_application/Screens/Pix/ListTransferMain.dart';
 import 'package:flutter_application/Screens/Pix/my_pix.dart';
 import 'package:flutter_application/Screens/home/homePage.dart';
+import 'package:flutter_application/widgets/rec_card_button.dart';
 import 'package:flutter_application/widgets/square_card_button.dart';
+import 'package:flutter_application/widgets/square_card_button_action.dart';
 import 'package:sizer/sizer.dart';
 
 class CreditCard extends StatefulWidget {
@@ -78,28 +80,22 @@ class _CreditCardState extends State<CreditCard> {
     return  WillPopScope(
       onWillPop: () async => false,
       child: Scaffold(
+      appBar: AppBar(
+        leading: new IconButton(
+            icon: new Icon(Icons.arrow_back),
+            onPressed: () => Navigator.push(context, MaterialPageRoute(builder: (context){
+              return MyHomePage();
+            }))
+        ),
+        title: Text('Cartão de Crédito Virtual'),
+      ) ,
       body: Column(
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
-          Container(
-              color: Colors.deepPurpleAccent,
-              padding: EdgeInsets.only(top: 10.sp),
-              height: 55.sp,
-              width: 100.w,
-              child: Row(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    IconButton(icon: Icon(Icons.arrow_back_outlined,size: 15.sp,), onPressed:(){  Navigator.push(context, MaterialPageRoute(builder: (context){
-                      return MyHomePage();
-                    }));}),
-                    Text('      Cartão de crédito virtual  ',style: TextStyle(color: Colors.white,fontWeight: FontWeight.bold,fontSize: 14.sp),)
-                  ],
-          ),
-          ),
+
           Container(
               width: 300.sp,
-              height: 400 .sp,
+              height: 440.sp,
               decoration: BoxDecoration(gradient: LinearGradient(colors: [Colors.purple.shade100,Colors.indigo.shade100])),
               child: Column (
                 mainAxisAlignment: MainAxisAlignment.start,
@@ -197,7 +193,7 @@ class _CreditCardState extends State<CreditCard> {
                                     .then((value) => _showDialog()),);
                             }
                           },
-                          child: SquareCard(title:'Apagar Cartão',icon:Icons.highlight_remove_rounded)
+                          child: SquareCardAction('Apagar Cartão',Icons.highlight_remove_rounded)
                         ),
                   ),
                       Container(
@@ -224,11 +220,12 @@ class _CreditCardState extends State<CreditCard> {
                               });
                             }
                           },
-                          child: SquareCard(title:'Criar novo cartão',icon:Icons.credit_card)
+                          child: SquareCardAction('Criar novo cartão',Icons.credit_card)
                         ),
                       ),
                     ],
                   ),
+                  RecCard('Aumentar Limite', Icons.add,CreditCard() )
                 ],
               )
           ),

@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_application/Screens/Pix/ListTransferMain.dart';
 import 'package:flutter_application/Screens/Pix/historico.dart';
+import 'package:flutter_application/Screens/home/homePage.dart';
 import 'package:flutter_application/widgets/rec_card_button.dart';
 import 'package:flutter_application/widgets/square_card_button.dart';
 
@@ -15,11 +16,17 @@ class PixScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        leading: new IconButton(
+            icon: new Icon(Icons.arrow_back),
+            onPressed: () => Navigator.push(context, MaterialPageRoute(builder: (context){
+              return MyHomePage();
+            }))
+        ),
         title: Text('Pix'),
       ) ,
       body: Column(
         children: [
-          Expanded(
+          Flexible(
             flex: 1,
             child: Container(
               width: 430.sp,
@@ -38,14 +45,10 @@ class PixScreen extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Expanded(
-                flex: 1,
-                child: SquareCard(page:ListTransfer(),title:'Transferir',icon: Icons.attach_money_outlined),
-              ),
-              Expanded(
-                flex: 1,
-                child: SquareCard(page:MyPix(),title:'Sua Chave', icon:Icons.vpn_key_rounded)
-              ),
+               SquareCard(page:ListTransfer(),title:'Transferir',icon: Icons.attach_money_outlined),
+
+               SquareCard(page:MyPix(),title:'Sua Chave', icon:Icons.vpn_key_rounded)
+              
 
             ],
           ),

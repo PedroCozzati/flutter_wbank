@@ -89,7 +89,7 @@ class FormContatosState extends State<FormContatos> {
     final String nome = _controladorNome.text;
     final int conta = int.tryParse(_controladorConta.text)!;
     final Contact newContact = Contact(0, nome, conta);
-    FormTransferir(nome);
+    FormTransferir(nome,conta);
     if (_formKey.currentState!.validate()) {
       ScaffoldMessenger.of(context)
           .showSnackBar(SnackBar(content: Text('Conta adicionada')));

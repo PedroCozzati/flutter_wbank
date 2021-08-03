@@ -58,7 +58,7 @@ class ItensFormulario extends StatelessWidget{
       child:ListTile(
         leading:Icon(Icons.person),
         title: Text( _formAluno.name.toString(),style: TextStyle(fontWeight: FontWeight.bold),),
-        subtitle: Text(_formAluno.conta.toString(), style: TextStyle(fontSize: 15,color: Colors.black),
+        subtitle: Text(_formAluno.accountNumber.toString(), style: TextStyle(fontSize: 15,color: Colors.black),
         )
       )
     );

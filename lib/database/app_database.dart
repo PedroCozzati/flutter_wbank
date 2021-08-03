@@ -11,11 +11,11 @@ Future<Database> createDatabase() async {
           'CREATE TABLE contacts('
                'id INTEGER PRIMARY KEY,'
                'name TEXT, '
-               'conta INTEGER)'
+               'accountNumber INTEGER)'
               'CREATE TABLE guardar('
                 'id INTEGER PRIMARY KEY,'
                 'dinheiro INTEGER, '
-                'numeroConta INTEGER)'
+                'accountNumber INTEGER)'
 
       );
     },
@@ -28,7 +28,7 @@ Future<int> save(Contact contact) async{
   final Database db = await createDatabase();
   final Map<String,dynamic> contactMap = Map();
      contactMap['name'] = contact.name;
-     contactMap['conta'] = contact.conta;
+     contactMap['accountNumber'] = contact.accountNumber;
      return db.insert('contacts', contactMap);
 }
 
@@ -36,7 +36,7 @@ Future<int> saveG(Guardar guardar) async{
   final Database db = await createDatabase();
   final Map<String,dynamic> guardarMap = Map();
   guardarMap['dinheiro'] = guardar.dinheiro;
-  guardarMap['numeoConta'] = guardar.numeroConta;
+  guardarMap['naccountNumber'] = guardar.numeroConta;
   return db.insert('guardar', guardarMap);
 }
 
@@ -48,7 +48,7 @@ Future<List<Contact>> findAll() async{
     final Contact contact = Contact(
         row['id'],
         row['name'],
-        row['conta'],
+        row['accountNumber'],
     );
     contacts.add(contact);
   }
@@ -63,7 +63,7 @@ Future<List<Guardar>> findAllG() async{
     final Guardar guardar = Guardar(
       row['id'],
       row['dinheiro'],
-      row['numeroConta'],
+      row['accountNumber'],
     );
     guardarG.add(guardar);
   }

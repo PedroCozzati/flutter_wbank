@@ -4,7 +4,8 @@ class Transaction {
   final double value;
   final Contact contact;
 
-  Transaction(this.value, this.contact);
+
+  Transaction(this.value, this.contact, );
 
   @override
   String toString(){

@@ -13,7 +13,7 @@ class ContactDao{
     final Database db = await createDatabase();
     final Map<String,dynamic> contactMap = Map();
     contactMap['name'] = contact.name;
-    contactMap['conta'] = contact.conta;
+    contactMap['conta'] = contact.accountNumber;
     return db.insert('contacts', contactMap);
   }
 
@@ -40,8 +40,8 @@ Future<Database> createDatabase() async {
       db.execute(ContactDao.tableSql
       );
     },
-    version: 1,
-   // onDowngrade: onDatabaseDowngradeDelete,
+    version: 2,
+   onDowngrade: onDatabaseDowngradeDelete,
   );
 }
 
@@ -49,7 +49,7 @@ Future<int> save(Contact contact) async{
   final Database db = await createDatabase();
   final Map<String,dynamic> contactMap = Map();
   contactMap['name'] = contact.name;
-  contactMap['conta'] = contact.conta;
+  contactMap['conta'] = contact.accountNumber;
   return db.insert('contacts', contactMap);
 }
 

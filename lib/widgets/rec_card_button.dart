@@ -17,19 +17,22 @@ class RecCard extends StatelessWidget {
             return page;
           }));
         },
-        child: Expanded(
-          flex: 1,
-          child: Container(
-          width: double.infinity,
-          height: 40.sp,
-          child:Column(
-            children: [
-              Text(title,style: TextStyle(fontSize: 13.sp),),
-              Center(child: Icon(icon,size: 18.sp,color: Colors.blueGrey,),)
-            ],
-          ),
+        child: Flex(
+          direction: Axis.horizontal,
+          children:[Expanded(
+            flex: 1,
+            child: Container(
+              width: double.infinity,
+              height: 34.sp,
+              child:Column(
+                children: [
+                  Text(title,style: TextStyle(fontSize: 13.sp),),
+                  Center(child: Icon(icon,size: 18.sp,color: Colors.blueGrey,),)
+                ],
+              ),
+            ),
+          ),]
         ),
-      ),
       ),
     );
   }
